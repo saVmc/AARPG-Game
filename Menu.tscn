@@ -1,0 +1,171 @@
+[gd_scene load_steps=23 format=3 uid="uid://bej1ahoiri10l"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_1bv5g"]
+[ext_resource type="Texture2D" uid="uid://b0hd6lhi1o45n" path="res://b2a05cd08f15cc87b2d411e30afd96ee.png" id="2_arktn"]
+[ext_resource type="FontFile" uid="uid://du20kqjkaxe1r" path="res://INVASION2000.TTF" id="2_vfqa2"]
+[ext_resource type="AudioStream" uid="uid://c2x080bowpn7l" path="res://Long Road Ahead.ogg" id="3_4v8bs"]
+[ext_resource type="Texture2D" uid="uid://prlvhxa8a8ab" path="res://Individual Frames/_Play/[1] Normal.png" id="3_8um5f"]
+[ext_resource type="Script" path="res://Sprite2D.gd" id="3_a2ccb"]
+[ext_resource type="Texture2D" uid="uid://coy2lppebu48" path="res://Individual Frames/_Play/[2] Clicked.png" id="7_4bvna"]
+[ext_resource type="Texture2D" uid="uid://ogu54o1wafua" path="res://Individual Frames/_Play/[3] Hover.png" id="8_tx5ei"]
+[ext_resource type="Texture2D" uid="uid://y2wjn730a8ig" path="res://Individual Frames/[5] Blue/[1] Normal.png" id="9_fnabb"]
+[ext_resource type="Texture2D" uid="uid://i2mwsxbcq55h" path="res://Individual Frames/[5] Blue/[2] Clicked.png" id="10_ejlwm"]
+[ext_resource type="Texture2D" uid="uid://dd0c5epffjcjk" path="res://Individual Frames/[5] Blue/[3] Hover.png" id="11_rmvub"]
+[ext_resource type="Texture2D" uid="uid://kteost5vsmre" path="res://Individual Frames/_Exit/[1] Normal.png" id="12_5rb7j"]
+[ext_resource type="Texture2D" uid="uid://bu2ke7hdbtn70" path="res://Individual Frames/_Exit/[2] Clicked.png" id="13_82fp0"]
+[ext_resource type="Texture2D" uid="uid://qijhjx4eko7v" path="res://Individual Frames/_Exit/[3] Hover.png" id="14_h71ly"]
+[ext_resource type="Texture2D" uid="uid://vhvanmduopjl" path="res://Individual Frames/pixil-frame-0.png" id="15_bso3t"]
+[ext_resource type="Texture2D" uid="uid://bo5g5baivv6o4" path="res://Individual Frames/foliageblobforittle.png" id="16_jw6tn"]
+[ext_resource type="Texture2D" uid="uid://c8opx0ay8r6ds" path="res://Individual Frames/forest.png" id="17_2ffej"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3crd"]
+bg_color = Color(0, 0.721152, 0.228908, 1)
+expand_margin_left = 7.0
+expand_margin_right = 4.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7sqy"]
+bg_color = Color(7.94157e-07, 0.469179, 0.138205, 1)
+expand_margin_left = 9.0
+expand_margin_top = 1.0
+expand_margin_right = 6.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="Theme" id="Theme_u7i43"]
+Button/constants/h_separation = 6
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("2_vfqa2")
+Button/styles/hover = SubResource("StyleBoxFlat_a3crd")
+Button/styles/normal = SubResource("StyleBoxFlat_f7sqy")
+
+[sub_resource type="Animation" id="Animation_jwxaf"]
+resource_name = "title_move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(139, 85), Vector2(139, 90), Vector2(139, 95), Vector2(139, 100), Vector2(139, 105), Vector2(139, 105)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_62it2"]
+_data = {
+"title_move": SubResource("Animation_jwxaf")
+}
+
+[node name="Menu" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -11.0
+offset_top = -4.0
+offset_right = -11.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1bv5g")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 128.0
+offset_right = 354.0
+offset_bottom = 229.0
+theme = SubResource("Theme_u7i43")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(140, 79)
+scale = Vector2(0.211511, 0.211511)
+texture = ExtResource("2_arktn")
+script = ExtResource("3_a2ccb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4v8bs")
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_62it2")
+}
+
+[node name="Play" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 333.0
+offset_top = 88.0
+offset_right = 381.0
+offset_bottom = 104.0
+scale = Vector2(1.95745, 2.02191)
+texture_normal = ExtResource("3_8um5f")
+texture_pressed = ExtResource("7_4bvna")
+texture_hover = ExtResource("8_tx5ei")
+
+[node name="Options" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 333.0
+offset_top = 128.0
+offset_right = 381.0
+offset_bottom = 144.0
+scale = Vector2(1.95745, 2.02191)
+texture_normal = ExtResource("9_fnabb")
+texture_pressed = ExtResource("10_ejlwm")
+texture_hover = ExtResource("11_rmvub")
+
+[node name="Exit" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 333.0
+offset_top = 168.0
+offset_right = 381.0
+offset_bottom = 184.0
+scale = Vector2(1.95745, 2.02191)
+texture_normal = ExtResource("12_5rb7j")
+texture_pressed = ExtResource("13_82fp0")
+texture_hover = ExtResource("14_h71ly")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 310.0
+offset_top = 62.0
+offset_right = 451.0
+offset_bottom = 226.0
+mouse_filter = 2
+texture = ExtResource("15_bso3t")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = 241.0
+offset_top = 168.0
+offset_right = 391.0
+offset_bottom = 268.0
+scale = Vector2(-1.57673, -1.57673)
+mouse_filter = 2
+texture = ExtResource("16_jw6tn")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+z_index = -2
+layout_mode = 0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 488.0
+offset_bottom = 245.0
+scale = Vector2(1.11771, 1.12609)
+mouse_filter = 2
+texture = ExtResource("17_2ffej")
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

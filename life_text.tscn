@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://mj6qbqkd3ov7"]
+
+[ext_resource type="Texture2D" uid="uid://be2b6kk4he5n7" path="res://GUI/gui_Life.png" id="1_05sfv"]
+
+[node name="Life Text" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_05sfv")

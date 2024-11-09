@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c2x080bowpn7l"
+path="res://.godot/imported/Long Road Ahead.ogg-c48d3cf05bfc136d57d16b6b832b4a8e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Long Road Ahead.ogg"
+dest_files=["res://.godot/imported/Long Road Ahead.ogg-c48d3cf05bfc136d57d16b6b832b4a8e.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
