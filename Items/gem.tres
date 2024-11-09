@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://b7sa1e2i8oig6"]
+
+[ext_resource type="Script" path="res://Items/Scripts/item_data.gd" id="1_8c7jr"]
+[ext_resource type="Texture2D" uid="uid://b8u81esafods4" path="res://Items/sprites/icons/16x16/crystal_01d.png" id="2_tyips"]
+
+[resource]
+script = ExtResource("1_8c7jr")
+name = "Crimson Gem"
+description = "A very large gemstone. Some shops consider it legal tender."
+texture = ExtResource("2_tyips")
+effects = Array[Resource("res://Items/item_effects/item_efect.gd")]([])

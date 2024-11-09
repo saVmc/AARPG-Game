@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://be0x4xt4hcipd"]
+
+[ext_resource type="Script" path="res://Items/Scripts/item_data.gd" id="1_0k2ic"]
+[ext_resource type="Texture2D" uid="uid://ujkp1mc4kr54" path="res://Items/sprites/icons/16x16/stoneblock_01a.png" id="2_gbdkp"]
+
+[resource]
+script = ExtResource("1_0k2ic")
+name = "Brick"
+description = "It's just a stone brick."
+texture = ExtResource("2_gbdkp")

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=6 format=3 uid="uid://bili4l6oaajrw"]
+
+[ext_resource type="Script" path="res://Items/item_effects/item_effect_heal.gd" id="1_smm2o"]
+[ext_resource type="Script" path="res://Items/Scripts/item_data.gd" id="1_yc5tn"]
+[ext_resource type="Texture2D" uid="uid://2ac62s2p0ad" path="res://Items/sprites/icons/16x16/potion_01a.png" id="2_esa3p"]
+[ext_resource type="AudioStream" uid="uid://bste5ntmhwt3w" path="res://Items/item_effects/powerUp.wav" id="2_g3ofw"]
+
+[sub_resource type="Resource" id="Resource_cm7j5"]
+script = ExtResource("1_smm2o")
+heal_amount = 1
+audio = ExtResource("2_g3ofw")
+use_description = ""
+
+[resource]
+script = ExtResource("1_yc5tn")
+name = "HP Potion I"
+description = "Vial of healing elixir. Heals 1/2 HP"
+texture = ExtResource("2_esa3p")
+effects = Array[Resource("res://Items/item_effects/item_efect.gd")]([SubResource("Resource_cm7j5")])
