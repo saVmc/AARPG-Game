@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://br65j3iebloeq"]
+
+[ext_resource type="Script" path="res://Intro/Intro.gd" id="1_yi7no"]
+[ext_resource type="Texture2D" uid="uid://dx5gtprlwbm8t" path="res://Intro/pixil-frame-0 (2).png" id="2_6agxq"]
+[ext_resource type="AudioStream" uid="uid://us8f6ciqaqfy" path="res://Intro/Among Us (Role Reveal) - Sound Effect (HD).mp3" id="3_5gr37"]
+
+[sub_resource type="Animation" id="Animation_0s2y2"]
+resource_name = "Black_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mfhvh"]
+resource_name = "Black_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bbvua"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dtgxp"]
+_data = {
+"Black_in": SubResource("Animation_0s2y2"),
+"Black_out": SubResource("Animation_mfhvh"),
+"new_animation": SubResource("Animation_bbvua")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_yi7no")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(240, 135)
+scale = Vector2(0.550908, 0.526986)
+texture = ExtResource("2_6agxq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -13.0
+offset_top = -13.0
+offset_right = 27.0
+offset_bottom = 27.0
+scale = Vector2(12.5955, 7.34021)
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dtgxp")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5gr37")
+autoplay = true

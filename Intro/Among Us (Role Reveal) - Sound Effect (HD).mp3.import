@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://us8f6ciqaqfy"
+path="res://.godot/imported/Among Us (Role Reveal) - Sound Effect (HD).mp3-a39c5c64dc1963656bcdee3211dabd2e.mp3str"
+
+[deps]
+
+source_file="res://Intro/Among Us (Role Reveal) - Sound Effect (HD).mp3"
+dest_files=["res://.godot/imported/Among Us (Role Reveal) - Sound Effect (HD).mp3-a39c5c64dc1963656bcdee3211dabd2e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
