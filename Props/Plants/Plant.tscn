@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://cehhx3875v2w2"]
+
+[ext_resource type="Script" path="res://Props/Plants/plant.gd" id="1_hkblo"]
+[ext_resource type="Texture2D" uid="uid://bja2tcegv6h1v" path="res://Props/Sprites/Bush_simple2_1.png" id="2_on3uj"]
+[ext_resource type="PackedScene" uid="uid://8l7oi7gb15tt" path="res://GeneralNodes/Hitbox/HitBox.tscn" id="3_boav0"]
+[ext_resource type="AudioStream" uid="uid://dxwq4lrxia22y" path="res://Props/Plants/click.wav" id="4_i6t3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iy1ih"]
+size = Vector2(20, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n22ot"]
+size = Vector2(20, 12)
+
+[node name="Plant" type="Node2D"]
+script = ExtResource("1_hkblo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -8)
+texture = ExtResource("2_on3uj")
+
+[node name="HitBox" parent="." instance=ExtResource("3_boav0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(1, -8)
+shape = SubResource("RectangleShape2D_iy1ih")
+debug_color = Color(0.596198, 0.545178, 5.77569e-07, 0.42)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -8)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, 6)
+shape = SubResource("RectangleShape2D_n22ot")
+
+[node name="DestroySound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_i6t3h")
