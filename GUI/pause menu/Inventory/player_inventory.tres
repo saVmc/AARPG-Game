@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=9 format=3 uid="uid://whilf4phx2jr"]
+
+[ext_resource type="Script" path="res://GUI/pause menu/Inventory/Scripts/inventory_data.gd" id="1_63xew"]
+[ext_resource type="Resource" uid="uid://b7sa1e2i8oig6" path="res://Items/gem.tres" id="2_rqd0i"]
+[ext_resource type="Script" path="res://GUI/pause menu/Inventory/Scripts/slot_data.gd" id="3_vnb4c"]
+[ext_resource type="Resource" uid="uid://bili4l6oaajrw" path="res://Items/potion.tres" id="4_q5gi8"]
+[ext_resource type="Resource" uid="uid://be0x4xt4hcipd" path="res://Items/stone.tres" id="5_aw6cl"]
+
+[sub_resource type="Resource" id="Resource_681dl"]
+script = ExtResource("3_vnb4c")
+item_data = ExtResource("2_rqd0i")
+quantity = 89
+
+[sub_resource type="Resource" id="Resource_g10cn"]
+script = ExtResource("3_vnb4c")
+item_data = ExtResource("4_q5gi8")
+quantity = 27
+
+[sub_resource type="Resource" id="Resource_8ri6x"]
+script = ExtResource("3_vnb4c")
+item_data = ExtResource("5_aw6cl")
+quantity = 5
+
+[resource]
+script = ExtResource("1_63xew")
+slots = Array[ExtResource("3_vnb4c")]([SubResource("Resource_681dl"), null, null, SubResource("Resource_g10cn"), null, null, null, SubResource("Resource_8ri6x"), null, null])

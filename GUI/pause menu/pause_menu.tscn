@@ -1,0 +1,162 @@
+[gd_scene load_steps=18 format=3 uid="uid://b8tctkwnxhchl"]
+
+[ext_resource type="Script" path="res://GUI/pause menu/pause_menu.gd" id="1_6l7hb"]
+[ext_resource type="Texture2D" uid="uid://vhvanmduopjl" path="res://Individual Frames/pixil-frame-0.png" id="2_top31"]
+[ext_resource type="Texture2D" uid="uid://c86bt2nutol6o" path="res://Individual Frames/[6] Silver/Save Normal.png" id="3_130eo"]
+[ext_resource type="Texture2D" uid="uid://dx3qtu1o2tj3i" path="res://GUI/Menu Elements/GUI Frame.png" id="3_fnbrs"]
+[ext_resource type="Texture2D" uid="uid://c74q0wgj20mgl" path="res://Individual Frames/[6] Silver/SavE Pressed.png" id="4_citfo"]
+[ext_resource type="Texture2D" uid="uid://rn0n0cgbslc2" path="res://Individual Frames/[6] Silver/Save Hover.png" id="5_rxrxg"]
+[ext_resource type="Texture2D" uid="uid://cbkjaxbfrvwxn" path="res://Individual Frames/[7] Gold/Load Normal.png" id="6_r0ola"]
+[ext_resource type="Texture2D" uid="uid://dx5u8wk2ehhka" path="res://Individual Frames/[7] Gold/Load Pressed.png" id="7_gkafq"]
+[ext_resource type="Texture2D" uid="uid://cjea4mov8qk37" path="res://Individual Frames/[7] Gold/Load Hover.png" id="8_xl5g1"]
+[ext_resource type="FontFile" uid="uid://cn53iv8alumhv" path="res://GUI/fonts/Quinquefive-ALoRM.ttf" id="10_72g7x"]
+[ext_resource type="FontFile" uid="uid://cp0q8jxa3futl" path="res://GUI/fonts/Minecraftia-Regular.ttf" id="11_8q0cv"]
+[ext_resource type="Texture2D" uid="uid://b7lrrrb2ckwct" path="res://Items/sprites/items.png" id="11_86eud"]
+[ext_resource type="Script" path="res://GUI/pause menu/Inventory/Scripts/inventory_ui.gd" id="12_br6eo"]
+[ext_resource type="PackedScene" uid="uid://cde280lwsp0dg" path="res://GUI/pause menu/Inventory/inventory_slot.tscn" id="12_mbtas"]
+[ext_resource type="Resource" uid="uid://whilf4phx2jr" path="res://GUI/pause menu/Inventory/player_inventory.tres" id="13_hsg0w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnv7v"]
+atlas = ExtResource("11_86eud")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_14jo7"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = SubResource("AtlasTexture_hnv7v")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[node name="PauseMenu" type="CanvasLayer" groups=["pause_menu"]]
+process_mode = 3
+layer = 100
+script = ExtResource("1_6l7hb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.231373, 0.231373, 0.231373, 0.788235)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.515
+anchor_top = 0.5
+anchor_right = 0.515
+anchor_bottom = 0.5
+offset_left = -189.2
+offset_top = -109.0
+offset_right = 42.8
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.587, 1.587)
+texture = ExtResource("2_top31")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -66.0
+offset_right = -42.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.960042, 1.50912)
+texture = ExtResource("3_fnbrs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = 6.0
+offset_right = -87.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.63515, 1.63515)
+
+[node name="Button_Save" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_130eo")
+texture_pressed = ExtResource("4_citfo")
+texture_hover = ExtResource("5_rxrxg")
+
+[node name="Button_Load" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("6_r0ola")
+texture_pressed = ExtResource("7_gkafq")
+texture_hover = ExtResource("8_xl5g1")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -87.0
+offset_right = 125.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.65803, 0.65803)
+theme_override_fonts/font = ExtResource("10_72g7x")
+text = "~ paused ~"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 199.0
+offset_top = 75.0
+offset_right = 395.0
+offset_bottom = 163.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_14jo7")
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer"]
+layout_mode = 2
+columns = 5
+script = ExtResource("12_br6eo")
+data = ExtResource("13_hsg0w")
+
+[node name="InventorySlot" parent="PanelContainer/GridContainer" instance=ExtResource("12_mbtas")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="PanelContainer/GridContainer" instance=ExtResource("12_mbtas")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="PanelContainer/GridContainer" instance=ExtResource("12_mbtas")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="PanelContainer/GridContainer" instance=ExtResource("12_mbtas")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="PanelContainer/GridContainer" instance=ExtResource("12_mbtas")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="PanelContainer/GridContainer" instance=ExtResource("12_mbtas")]
+layout_mode = 2
+
+[node name="ItemDescription" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 163.0
+offset_right = 395.0
+offset_bottom = 221.0
+theme_override_fonts/font = ExtResource("11_8q0cv")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 4
