@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://fxcoynik8gug"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_p8h4r"]
+[ext_resource type="PackedScene" uid="uid://dkcrvm0vyonln" path="res://tile_maps/dungeon01.tscn" id="2_klc2n"]
+[ext_resource type="PackedScene" uid="uid://d1hng7v181sg2" path="res://levels/player_spawn.tscn" id="3_sp6rm"]
+[ext_resource type="PackedScene" uid="uid://dgwu2oh8frdqk" path="res://levels/level_transition.tscn" id="4_bwwsp"]
+[ext_resource type="PackedScene" uid="uid://ch2oxh3rsa2fr" path="res://interactables/dungeon1/pressure_plate.tscn" id="5_hd3kv"]
+[ext_resource type="PackedScene" uid="uid://da4qq8gb0idce" path="res://interactables/dungeon1/barred_door.tscn" id="6_ffenb"]
+[ext_resource type="PackedScene" uid="uid://b4jqibhvnwmda" path="res://interactables/dungeon1/pushable_statue.tscn" id="7_6thod"]
+
+[node name="01" type="Node2D"]
+script = ExtResource("1_p8h4r")
+
+[node name="Dungeon_01_TileMap" parent="." instance=ExtResource("2_klc2n")]
+layer_0/tile_data = PackedInt32Array(-65527, 786432, 0, 9, 786432, 1, 65545, 786432, 2, 131081, 131072, 1, -65526, 786432, 0, 10, 786432, 1, 65546, 786432, 2, 131082, 786432, 3, -65525, 786432, 0, 11, 786432, 1, 65547, 786432, 2, 131083, 786432, 3, -65530, 786432, 0, 6, 786432, 1, 65542, 786432, 2, 131078, 786432, 3, -65531, 786432, 0, 5, 786432, 1, 65541, 786432, 2, 131077, 786432, 3, -65532, 786432, 0, 4, 786432, 1, 65540, 786432, 2, 131076, 786432, 3, -65535, 589824, 0, 1, 589824, 1, 65537, 589824, 2, 131073, 589824, 3, -65534, 655360, 0, 2, 655360, 1, 65538, 655360, 2, 131074, 655360, 3, -65533, 720896, 0, 3, 720896, 1, 65539, 720896, 2, 131075, 720896, 3, -65524, 851968, 0, 12, 851968, 1, 65548, 851968, 2, 131084, 851968, 3, -65523, 917504, 0, 13, 917504, 1, 65549, 917504, 2, 131085, 917504, 3, -65522, 983040, 0, 14, 983040, 1, 65550, 983040, 2, 131086, 983040, 3, 196619, 786432, 3, 196620, 851968, 3, 196621, 917504, 3, 196622, 983040, 3, 262155, 786432, 3, 262156, 851968, 3, 262157, 917504, 3, 262158, 983040, 3, 196609, 589824, 3, 196610, 655360, 3, 196611, 720896, 3, 196612, 786432, 3, 262145, 589824, 3, 262146, 655360, 3, 262147, 720896, 3, 262148, 786432, 3, 327681, 589824, 4, 393217, 589824, 5, 458753, 589824, 6, 327682, 655360, 4, 393218, 655360, 5, 458754, 655360, 6, 327683, 720896, 4, 393219, 720896, 5, 458755, 720896, 6, 327684, 786432, 4, 393220, 786432, 5, 458756, 786432, 6, 327691, 786432, 4, 393227, 786432, 5, 458763, 786432, 6, 327692, 851968, 4, 393228, 851968, 5, 458764, 851968, 6, 327693, 917504, 4, 393229, 917504, 5, 458765, 917504, 6, 327694, 983040, 4, 393230, 983040, 5, 458766, 983040, 6, 327686, 0, 5, 393222, 0, 6, 458758, 0, 7, 327687, 65536, 5, 393223, 65536, 6, 458759, 65536, 7, 327688, 131072, 5, 393224, 131072, 6, 458760, 131072, 7, 327689, 196608, 5, 393225, 196608, 6, 458761, 196608, 7, 262154, 786432, 3, 327690, 786432, 4, 393226, 786432, 5, 458762, 786432, 6, 262149, 786432, 3, 327685, 786432, 4, 393221, 786432, 5, 458757, 786432, 6, 196613, 0, 1, 196614, 65536, 1, 196615, 131072, 1, 262150, 0, 1, 262151, 0, 1, 262152, 65536, 1, 262153, 131072, 1, 196616, 0, 1, 196617, 65536, 1, 196618, 131072, 1, 131079, 0, 1, 131080, 65536, 1, 65543, 0, 1, 65544, 65536, 1)
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("3_sp6rm")]
+position = Vector2(256, 173)
+
+[node name="LevelTransition" parent="." instance=ExtResource("4_bwwsp")]
+position = Vector2(256, 173)
+level = "res://levels/area1/01.tscn"
+target_transition_area = "LevelTransition3"
+center_player = true
+side = 3
+
+[node name="LevelTransition2" parent="." instance=ExtResource("4_bwwsp")]
+position = Vector2(256, 48)
+level = "res://Levels/Dungeon01/02.tscn"
+side = 2
+
+[node name="PressurePlate" parent="." instance=ExtResource("5_hd3kv")]
+z_index = 1
+position = Vector2(192, 112)
+
+[node name="BarredDoor" parent="." instance=ExtResource("6_ffenb")]
+position = Vector2(224, 55)
+
+[node name="PushableStatue" parent="." instance=ExtResource("7_6thod")]
+position = Vector2(319, 114)

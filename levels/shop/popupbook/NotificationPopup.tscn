@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxxuiq5475uf7"]
+
+[ext_resource type="Script" path="res://levels/shop/popupbook/NotificationPopup.gd" id="1_6j435"]
+[ext_resource type="Texture2D" uid="uid://ckawfxpfchmqo" path="res://GUI/Menu Elements/ACRUALLYSAVED.png" id="2_cvba6"]
+
+[node name="NotificationPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 738.0
+offset_top = 282.0
+offset_right = 784.0
+offset_bottom = 301.0
+texture = ExtResource("2_cvba6")
+stretch_mode = 2
+script = ExtResource("1_6j435")

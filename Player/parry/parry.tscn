@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsyb5b0g2a3tv"]
+
+[ext_resource type="Script" path="res://Player/parry/parry_system.gd" id="1_ddxjs"]
+[ext_resource type="Texture2D" uid="uid://x63i1im5d2p8" path="res://Player/parry/PARRY!.png" id="2_353oa"]
+
+[node name="ParrySystem" type="Node2D"]
+script = ExtResource("1_ddxjs")
+cooldown_time = 0.2
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ParryTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="DamageParticles" type="CPUParticles2D" parent="."]
+amount = 20
+explosiveness = 0.29
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 50.0
+angular_velocity_max = 360.0
+orbit_velocity_max = 0.5
+linear_accel_max = 24.46
+radial_accel_max = 11.51
+scale_amount_min = 0.0
+scale_amount_max = 3.0
+color = Color(0.773856, 2.23808e-06, 9.62615e-07, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[node name="ParryTexture" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.440105, 0.440105)
+texture = ExtResource("2_353oa")
+
+[node name="CooldownBar" type="TextureProgressBar" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
