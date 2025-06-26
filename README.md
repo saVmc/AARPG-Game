@@ -1,7 +1,9 @@
 # Godot Game Project - 2024
 
 This repo contains a ***very bugged*** beta version of *Ryuu's Quest* game made entirely with the Godot Engine.
-Used for sharing and testing. ## Not the final version!
+Used for sharing and testing. 
+
+# Not the final, working version!
 
 ## Overview
 
